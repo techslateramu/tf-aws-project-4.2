@@ -20,7 +20,7 @@ Description:
 
 Steps:
 
-1. Clone Repository: git clone https://github.com/techslateramu/tf-aws-project-4.1.git
+1. Clone Repository: git clone https://github.com/techslateramu/tf-aws-project-4.2.git
 
 2. 'Amazon S3 Module:'
 
