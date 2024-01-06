@@ -1,0 +1,76 @@
+'Introduction:'
+
+This document outlines the requirements for deploying an AWS infrastructure with specific modules. The infrastructure will consist of an S3 Bucket, AWS EKS cluster (Elastic Kubernetes Service) , KMS , AWS Secret Manager .
+
+'Prerequisites:'
+
+AWS-Account: Ensure that you have an active AWS account with the necessary permissions to create and manage resources.
+
+Terraform-Installed: Make sure Terraform is installed on your local machine. You can download it from Terraforms official website.
+
+AWS-CLI: Install and configure the AWS CLI on your machine with the necessary credentials.
+
+'Description:'
+
+Description:
+
+- The infrastructure setup will be organized into four modules: AWS S3Bucket, AWS Key Management Service (KMS), Elastic kubernetes cluster, and AWS Secrets Manager. 
+
+- Each module will be developed independently, and their outputs will be integrated as necessary.
+
+Steps:
+
+1. Clone Repository: git clone https://github.com/techslateramu/tf-aws-project-4.2.git
+
+2. 'Amazon S3 Module:'
+
+- Develop a Terraform module for Amazon S3.
+- Specify parameters such as bucket name, access control policies, and relevant configurations.
+- Include main.tf, variables.tf, and outputs.tf files under the module.
+- In the main Terraform configuration file (main.tf), call the Amazon S3 module. 
+
+3. 'AWS KMS Module:'
+
+- Develop a Terraform module for AWS Key Management Service (KMS).
+- Specify parameters such as the key name, key policy, and relevant settings.
+- Include main.tf, variables.tf, and outputs.tf files under the module.
+- In the main Terraform configuration file (main.tf), call the AWS KMS module.
+
+4. 'Amazon EKS Cluster Module:'
+
+- Create a Terraform module for Amazon EKS Cluster.
+- Include main.tf, variables.tf, and outputs.tf files under the module.
+= Define the EKS cluster configuration including node groups, networking, and other required parameters.
+- In the main Terraform configuration file (main.tf), call the Amazon EKS Cluster module.
+- Write outputs to capture important details such as cluster endpoint, credentials, etc., which may need to be pushed into the AWS Secret Manager.
+
+5. 'AWS Secrets Manager Module:'
+
+- Create a Terraform module for AWS Secrets Manager.
+- Specify parameters such as secret name, secret value, and relevant configurations.
+- Incorporate outputs from the Amazon DynamoDB as secrets.
+- Include main.tf, variables.tf, and outputs.tf files under the module.
+- In the main Terraform configuration file (main.tf), call the AWS Secrets Manager module.
+
+6. 'Test Configuration Locally to validate configurations:'
+
+Run :
+
+1. 'terraform init' 
+2. 'terraform Validate'
+2. 'terraform plan'
+3. 'terraform apply' 
+
+9. 'Cleanup:'
+
+Run :
+- 'terraform destroy' to clean up resources.
+
+
+10. 'Documentation Update:'
+
+- Include a README with clear instructions on executing Terraform deployment.
+
+- Commit all Terraform configurations and related files to version control (Git) .
+
+
